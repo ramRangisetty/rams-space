@@ -1,3 +1,5 @@
+Welcome to my portfolio repository. Template credits below:
+
 Thanks for downloading this template!
 
 Template Name: MyResume
