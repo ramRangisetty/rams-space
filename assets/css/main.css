@@ -697,6 +697,8 @@ section,
   background-color: var(--accent-color);
 }
 
+
+
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
@@ -860,130 +862,97 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 60px 30px;
+.services-section {
+  padding: 50px 0;
+  background-color: var(--primary-bg-color);
+  /* color: var(--primary-text-color); */
+  color: #474559;
+  font-family: var(--font-family);
+}
+
+.services-heading {
+  font-size: 2.5rem;
   text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
+.services-list-container {
+  padding: 10px 0;
+}
+
+.services-list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
 }
 
-.services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
+.service {
+  background-color: var(--primary-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  text-align: center;
+  padding: 20px;
+  width: calc(25% - 30px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.services .service-item .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-hover-bg);
 }
 
-.services .service-item .icon svg path {
-  transition: 0.5s;
-  fill: color-mix(in srgb, var(--default-color), transparent 95%);
+.service img {
+  width: 80px; /* Ensuring all images are the same width */
+  height: 80px; /* Fixing the height of the images */
+  object-fit: contain; /* Make sure images fit without distorting */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
-.services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+.service:hover img {
+  transform: scale(1.1);
 }
 
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+.service-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  margin-bottom: 15px;
 }
 
-.services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+.service-bar {
+  width: 100%;
+  background-color: var(--progress-bar-bg);
+  border-radius: 25px;
+  overflow: hidden;
+  height: 12px; /* Adjusted height */
+  margin-top: 10px;
 }
 
-.services .service-item.item-cyan i {
-  color: #0dcaf0;
+.service-bar span {
+  display: block;
+  height: 100%;
+  background: var(--progress-bar-color); /* Using the defined color */
+  border-radius: 25px;
+  transition: width 0.5s ease;
 }
 
-.services .service-item.item-cyan:hover .icon i {
-  color: #fff;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .services-heading {
+    font-size: 2rem;
+  }
 
-.services .service-item.item-cyan:hover .icon path {
-  fill: #0dcaf0;
-}
+  .services-list {
+    gap: 20px;
+  }
 
-.services .service-item.item-orange i {
-  color: #fd7e14;
-}
-
-.services .service-item.item-orange:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-orange:hover .icon path {
-  fill: #fd7e14;
-}
-
-.services .service-item.item-teal i {
-  color: #20c997;
-}
-
-.services .service-item.item-teal:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-teal:hover .icon path {
-  fill: #20c997;
-}
-
-.services .service-item.item-red i {
-  color: #df1529;
-}
-
-.services .service-item.item-red:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-red:hover .icon path {
-  fill: #df1529;
-}
-
-.services .service-item.item-indigo i {
-  color: #6610f2;
-}
-
-.services .service-item.item-indigo:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-indigo:hover .icon path {
-  fill: #6610f2;
-}
-
-.services .service-item.item-pink i {
-  color: #f3268c;
-}
-
-.services .service-item.item-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-pink:hover .icon path {
-  fill: #f3268c;
+  .service {
+    width: calc(50% - 20px);
+  }
 }
 
 /*--------------------------------------------------------------
